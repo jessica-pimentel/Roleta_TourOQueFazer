@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Restaurantes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="titulo">
+            <h1 class="subtitulo">Roleta de onde ir com o</h1>
+            <img src="https://touroquefazercuritiba.com.br/wp-content/uploads/2025/04/logo.svg" alt="Logo" />
+        </div>
+
+        <div class="form-container">
+            <select id="horario">
+                <option value="">Horário</option>
+                <option value="fullDay">Qualquer horário</option>
+                <option value="brunch">08:00 às 12:00</option>
+                <option value="lunch">11:00 às 18:00</option>
+                <option value="dinner">18:00 às 02:00</option>
+            </select>
+
+            <select id="dia">
+                <option value="">Dia</option>
+                <option value="randomDay">Qualquer dia</option>
+                <option value="monday">Segunda-feira</option>
+                <option value="tuesday">Terça-feira</option>
+                <option value="wednesday">Quarta-feira</option>
+                <option value="thursday">Quinta-feira</option>
+                <option value="friday">Sexta-feira</option>
+                <option value="saturday">Sábado</option>
+                <option value="sunday">Domingo</option>
+            </select>
+
+            <select id="bairro">
+                <option value="">Bairro</option>
+                <option value="QualquerBairro">Qualquer bairro</option>
+                <option value="batel">Batel</option>
+                <option value="agua-verde">Água Verde</option>
+                <option value="centro">Centro</option>
+                <option value="cabral">Cabral</option>
+                <option value="juveve">Juvevê</option>
+                <option value="portão">Portão</option>
+                <option value="santa-felicidade">Santa Felicidade</option>
+                <option value="santa-quitéria">Santa Quitéria</option>
+            </select>
+        </div>
+
+       <div class="flags-check">
+            <label>
+                <input type="checkbox" id="takeAway"> Take away
+            </label>
+            <label>
+                <input type="checkbox" id="petFriendly"> Pet friendly
+            </label>
+        </div>
+
+        <button id="buscarBtn">Buscar</button>
+    </div>
+
+    <!-- Modal do resultado -->
+    <div id="modalResultado" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Parabéns!!!</h1>
+            <h2>O seu tour vai ser no...</h2>
+            <p id="nomeRestaurante"></p>
+        </div>
+    </div>
+
+    <script src="banco.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
