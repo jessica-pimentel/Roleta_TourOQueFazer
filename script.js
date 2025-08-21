@@ -6,69 +6,99 @@ function mostrarResultado(restaurante) {
     const bairroRestaurante = document.getElementById("bairroRestaurante");
     const feriadoRestaurante = document.getElementById("feriadoRestaurante");
     const dataComemorativaRestaurante = document.getElementById("dataComemorativaRestaurante");
-
-    // botão rodar novamente só aparece quando a roleta já retornou um resultado
+    const takeAwayRestaurante = document.getElementById("takeAwayRestaurante");
+    const petFriendlyRestaurante = document.getElementById("petFriendlyRestaurante");
+    
+    // Botão de rodar novamente só aparece quando a roleta já retornou um resultado
     const rodarNovamenteBtn = document.getElementById("rodarNovamenteBtn");
     rodarNovamenteBtn.classList.add("hidden");
 
-    // Adiciona a classe 'spinning' para aplicar o blur
+    // Adiciona a classe 'spinning' para aplicar o blur em todos os elementos
     nomeRestaurante.classList.add("spinning");
     horaRestaurante.classList.add("spinning");
     bairroRestaurante.classList.add("spinning");
     feriadoRestaurante.classList.add("spinning");
     dataComemorativaRestaurante.classList.add("spinning");
+    takeAwayRestaurante.classList.add("spinning");
+    petFriendlyRestaurante.classList.add("spinning");
 
-    // Para evitar que o texto final apareça na roleta
+    // Array com os dados para a roleta
     const nomes = banco.map(r => r.nome);
     const horas = banco.map(r => r.hora);
     const bairros = banco.map(r => r.bairro);
+    const feriados = ["✅ Aceita em feriado", "❌ Não aceita em feriado"];
+    const datasComemorativas = ["🎉 Aceita em data comemorativa", "❌ Não aceita em data comemorativa"];
+    const takeAwayStatus = ["✅ Take away", "❌ Não tem Take away"];
+    const petFriendlyStatus = ["✅ Pet friendly", "❌ Não é Pet friendly"];
     
-    let i = 0;
-    let speed = 50;
+    // Configurações da animação
+    const tempoTotalRoleta = 2500;
+    const intervaloRoleta = 150;
 
-    const spin = () => {
-        // Rola os nomes
-        nomeRestaurante.innerText = nomes[i % nomes.length];
-        
-        // Rola os outros dados
-        horaRestaurante.innerText = `Horário: ${horas[i % horas.length]}`;
-        bairroRestaurante.innerText = `Bairro: ${bairros[i % bairros.length].join(", ")}`;
-        feriadoRestaurante.innerText = banco[i % banco.length].feriado ? "✅ Aceita em feriado" : "❌ Não aceita em feriado";
-        dataComemorativaRestaurante.innerText = banco[i % banco.length].dataComemorativa ? "🎉 Aceita em data comemorativa" : "❌ Não aceita em data comemorativa";
+    // Função que roda a roleta
+    const roleta = setInterval(() => {
+        // Seleção de itens aleatórios
+        const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
+        const horaAleatoria = horas[Math.floor(Math.random() * horas.length)];
+        const bairroAleatorio = bairros[Math.floor(Math.random() * bairros.length)];
+        const feriadoAleatorio = feriados[Math.floor(Math.random() * feriados.length)];
+        const dataComemorativaAleatoria = datasComemorativas[Math.floor(Math.random() * datasComemorativas.length)];
+        const takeAwayAleatorio = takeAwayStatus[Math.floor(Math.random() * takeAwayStatus.length)];
+        const petFriendlyAleatorio = petFriendlyStatus[Math.floor(Math.random() * petFriendlyStatus.length)];
 
-        i++;
-        speed += 20;
 
-        if (speed < 700) { // Aumentei o tempo final para o blur durar mais
-            setTimeout(spin, speed);
-        } else {
-            // Para roleta e mostra resultado final
-            nomeRestaurante.innerText = restaurante.nome;
-            horaRestaurante.innerText = `Horário: ${restaurante.hora}`;
-            bairroRestaurante.innerText = `Bairro: ${restaurante.bairro.join(", ")}`;
-            feriadoRestaurante.innerText = restaurante.feriado ? "✅ Aceita em feriado" : "❌ Não aceita em feriado";
-            dataComemorativaRestaurante.innerText = restaurante.dataComemorativa ? "🎉 Aceita em data comemorativa" : "❌ Não aceita em data comemorativa";
+        // Atualiza o texto dos elementos
+        nomeRestaurante.innerText = nomeAleatorio;
+        horaRestaurante.innerText = `Horário: ${horaAleatoria}`;
+        bairroRestaurante.innerText = `Bairro: ${bairroAleatorio.join(", ")}`;
+        feriadoRestaurante.innerText = feriadoAleatorio;
+        dataComemorativaRestaurante.innerText = dataComemorativaAleatoria;
+        takeAwayRestaurante.innerText = takeAwayAleatorio;
+        petFriendlyRestaurante.innerText = petFriendlyAleatoria;
 
-            // Remove a classe 'spinning' para tirar o blur
-            nomeRestaurante.classList.remove("spinning");
-            horaRestaurante.classList.remove("spinning");
-            bairroRestaurante.classList.remove("spinning");
-            feriadoRestaurante.classList.remove("spinning");
-            dataComemorativaRestaurante.classList.remove("spinning");
+    }, intervaloRoleta);
 
-            // Exibe o botão de rodar novamente
-            rodarNovamenteBtn.classList.remove("hidden");
-        }
-    };
+    // Para a roleta após o tempo definido
+    setTimeout(() => {
+        // Para o intervalo
+        clearInterval(roleta);
 
-    spin();
+        // Mostra o resultado final
+        nomeRestaurante.innerText = restaurante.nome;
+        horaRestaurante.innerText = `Horário: ${restaurante.hora}`;
+        bairroRestaurante.innerText = `Bairro: ${restaurante.bairro.join(", ")}`;
+        feriadoRestaurante.innerText = restaurante.feriado ? "✅ Aceita em feriado" : "❌ Não aceita em feriado";
+        dataComemorativaRestaurante.innerText = restaurante.dataComemorativa ? "🎉 Aceita em data comemorativa" : "❌ Não aceita em data comemorativa";
+        takeAwayRestaurante.innerText = restaurante.takeaway ? "✅ Take away" : "❌ Não tem Take away";
+        petFriendlyRestaurante.innerText = restaurante.petFriendly ? "✅ Pet friendly" : "❌ Não é Pet friendly";
 
+        // Remove a classe 'spinning' para tirar o blur
+        nomeRestaurante.classList.remove("spinning");
+        horaRestaurante.classList.remove("spinning");
+        bairroRestaurante.classList.remove("spinning");
+        feriadoRestaurante.classList.remove("spinning");
+        dataComemorativaRestaurante.classList.remove("spinning");
+        takeAwayRestaurante.classList.remove("spinning");
+        petFriendlyRestaurante.classList.remove("spinning");
+
+        // Exibe o botão de rodar novamente
+        rodarNovamenteBtn.classList.remove("hidden");
+
+    }, tempoTotalRoleta);
+
+    // Exibe o modal
     modal.style.display = "flex";
 
-    // Fechar modal
-    modal.querySelector(".close").onclick = () => modal.style.display = "none";
+    // Eventos para fechar o modal e resetar os filtros
+    modal.querySelector(".close").onclick = () => {
+        modal.style.display = "none";
+        resetarFiltros();
+    };
     window.onclick = (e) => {
-        if (e.target === modal) modal.style.display = "none";
+        if (e.target === modal) {
+            modal.style.display = "none";
+            resetarFiltros();
+        }
     };
 }
 
@@ -164,6 +194,14 @@ document.getElementById("rodarNovamenteBtn").addEventListener("click", function(
     modal.style.display = "none";
 
     // Simula um clique no botão de busca para rodar a roleta novamente
-    // Isso garante que os mesmos filtros sejam aplicados
+    // garante que os mesmos filtros sejam aplicados ao clicar no botão "Rodar Novamente"
     buscarBtn.click();
 });
+
+function resetarFiltros() {
+    document.getElementById("horario").value = "fullDay";
+    document.getElementById("dia").value = "randomDay";
+    document.getElementById("bairro").value = "QualquerBairro";
+    document.getElementById("takeAway").checked = false;
+    document.getElementById("petFriendly").checked = false;
+}

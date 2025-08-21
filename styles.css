@@ -169,9 +169,10 @@ button:hover {
 }
 
 .modal h2 {
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 10px;
     color: #0077b6;
+
 }
 
 .modal p {
@@ -204,7 +205,9 @@ button:hover {
 }
 
 #feriadoRestaurante,
-#dataComemorativaRestaurante {
+#dataComemorativaRestaurante,
+#takeAwayRestaurante,
+#petFriendlyRestaurante {
     font-size: 18px; /* Manteve o mesmo font-size, pois era a única diferença */
     font-weight: 600;
     margin-top: 6px;
@@ -216,7 +219,9 @@ button:hover {
 #horaRestaurante.spinning,
 #bairroRestaurante.spinning,
 #feriadoRestaurante.spinning,
-#dataComemorativaRestaurante.spinning {
+#dataComemorativaRestaurante.spinning,
+#takeAwayRestaurante.spinning,
+#petFriendlyRestaurante.spinning {
     filter: blur(2px);
     transition: filter 0.3s ease-out;
 }
