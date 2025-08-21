@@ -53,13 +53,21 @@
         <button id="buscarBtn">Buscar</button>
     </div>
 
-    <!-- Modal do resultado -->
     <div id="modalResultado" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h1>Parabéns!!!</h1>
-            <h2>O seu tour vai ser no...</h2>
-            <p id="nomeRestaurante"></p>
+            <h2>🎉 Parabéns!!!</h2>
+            <p>O seu tour vai ser no...</p>
+            
+            <div id="dadosRestaurante">
+                <h1 id="nomeRestaurante"></h1>
+                <p id="horaRestaurante"></p>
+                <p id="bairroRestaurante"></p>
+                <p id="feriadoRestaurante"></p>
+                <p id="dataComemorativaRestaurante"></p>
+            </div>
+            
+            <button id="rodarNovamenteBtn" class="hidden">Rodar Novamente</button>
         </div>
     </div>
 

@@ -32,7 +32,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 15px;
-    margin-top: 15x;
+    margin-top: 15px; /* Corrigido de 15x para 15px */
     text-align: center;
 }
 
@@ -41,12 +41,19 @@ body {
     font-weight: 600;
     color: #023e8a;
     margin-bottom: 10px;
-    
 }
 
 .header-logo img {
     max-width: 500px;
     height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#rodarNovamenteBtn {
+    margin-top:15px;
 }
 
 /* Título dentro do card */
@@ -162,54 +169,56 @@ button:hover {
 }
 
 .modal h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 10px;
     color: #0077b6;
 }
 
 .modal p {
     font-size: 26px;
     font-weight: 700;
-    color: #023e8a;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    color: #0077b6;
 }
 
 /* Animação do modal */
 @keyframes scaleUp {
-    from {transform: scale(0.7);}
-    to {transform: scale(1);}
+    from { transform: scale(0.7); }
+    to { transform: scale(1); }
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-    .card {
-        padding: 25px 20px;
-        width: 90%;
-    }
-
-    .titulo {
-        font-size: 28px;
-    }
-
-    select {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 16px;
-    }
-
-    .modal h2 {
-        font-size: 20px;
-    }
-
-    .modal p {
-        font-size: 22px;
-    }
+/* Estilos dos campos do restaurante */
+#nomeRestaurante {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #023e8a;
 }
 
-#nomeRestaurante.spinning {
-    filter: blur(1px);
-    transition: filter 0.1s;
+#horaRestaurante, 
+#bairroRestaurante {
+    font-size: 18px;
+    margin-top: 6px;
+    color: #0077b6;
+}
+
+#feriadoRestaurante,
+#dataComemorativaRestaurante {
+    font-size: 18px; /* Manteve o mesmo font-size, pois era a única diferença */
+    font-weight: 600;
+    margin-top: 6px;
+    color: #0077b6;
+}
+
+/* Animação do blur da roleta */
+#nomeRestaurante.spinning,
+#horaRestaurante.spinning,
+#bairroRestaurante.spinning,
+#feriadoRestaurante.spinning,
+#dataComemorativaRestaurante.spinning {
+    filter: blur(2px);
+    transition: filter 0.3s ease-out;
 }
 
 /* Estilo para checkboxes (flags) */
@@ -231,7 +240,7 @@ button:hover {
 }
 
 .flags-check input[type="checkbox"] {
-    accent-color: #ffffff; /* cor verde estilizada */
+    accent-color: #ffffff;
     width: 18px;
     height: 18px;
     cursor: pointer;
