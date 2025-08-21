@@ -32,20 +32,29 @@ function mostrarResultado(restaurante) {
     };
 }
 
-// Evento do botão Buscar
+// --- Preenche o select de bairros dinamicamente ---
+const bairroSelect = document.getElementById("bairro");
+const bairrosUnicos = [...new Set(banco.flatMap(r => r.bairro))].sort();
+
+bairrosUnicos.forEach(b => {
+    const option = document.createElement("option");
+    option.value = b;
+    option.textContent = b;
+    bairroSelect.appendChild(option);
+});
+
+// --- Evento do botão Buscar ---
 document.getElementById("buscarBtn").addEventListener("click", function() {
-    // Obter os valores dos inputs
     const horario = document.getElementById("horario").value;
     const dia = document.getElementById("dia").value;
     const bairro = document.getElementById("bairro").value;
     const takeAwayCheck = document.getElementById("takeAway").checked;
     const petFriendlyCheck = document.getElementById("petFriendly").checked;
 
-    // Lógica de filtragem ajustada para arrays
     const resultados = banco.filter(item => {
-        const filtroHorario = horario ? item.horario.includes(horario) : true;
-        const filtroDia = dia ? item.dia.includes(dia) : true;
-        const filtroBairro = bairro ? item.bairro.includes(bairro) : true;
+        const filtroHorario = horario && horario !== "fullDay" ? item.horario.includes(horario) : true;
+        const filtroDia = dia && dia !== "randomDay" ? item.dia.includes(dia) : true;
+        const filtroBairro = bairro && bairro !== "QualquerBairro" ? item.bairro.includes(bairro) : true;
         const filtroTakeAway = !takeAwayCheck || item.takeaway;
         const filtroPetFriendly = !petFriendlyCheck || item.petFriendly;
 
@@ -59,15 +68,3 @@ document.getElementById("buscarBtn").addEventListener("click", function() {
         alert("Nenhum resultado encontrado.");
     }
 });
-
-const resultados = banco.filter(item => {
-    const takeAwayCheck = document.getElementById("takeAway").checked;
-    const petFriendlyCheck = document.getElementById("petFriendly").checked;
-
-    return (horario ? item.horario === horario : true) &&
-           (dia ? item.dia === dia : true) &&
-           (bairro ? item.bairro === bairro : true) &&
-           (!takeAwayCheck || item.takeAway) &&
-           (!petFriendlyCheck || item.petFriendly);
-});
-

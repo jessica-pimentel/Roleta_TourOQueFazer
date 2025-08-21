@@ -24,7 +24,7 @@ const banco = [
     },
     { 
         nome: "Carlo Ristorante", 
-        bairro: ["Agua Verde"], 
+        bairro: ["Água Verde"], 
         dia: ["monday","tuesday", "wednesday", "thursday", "friday", "saturday"], 
         horario: ["dinner"], 
         hora: "19:00 - 22:45",
