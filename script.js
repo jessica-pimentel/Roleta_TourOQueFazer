@@ -198,6 +198,10 @@ document.getElementById("rodarNovamenteBtn").addEventListener("click", function(
     buscarBtn.click();
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    resetarFiltros();
+});
+
 function resetarFiltros() {
     document.getElementById("horario").value = "fullDay";
     document.getElementById("dia").value = "randomDay";
