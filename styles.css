@@ -48,6 +48,15 @@ body {
     height: auto;
 }
 
+#noResultsMessage {
+    color: #ff4d4d; 
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+    margin-top: -20px;
+    
+}
+
 .hidden {
     display: none;
 }

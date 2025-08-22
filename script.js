@@ -115,6 +115,12 @@ bairrosUnicos.forEach(b => {
 
 // --- Evento do botão Buscar ---
 document.getElementById("buscarBtn").addEventListener("click", function() {
+    // Referência para o elemento quando não tiver resultados para o filtro
+    const noResultsMessage = document.getElementById("noResultsMessage");
+    
+    // Esconde a mensagem no início da busca
+    noResultsMessage.classList.add("hidden");
+
     // Obter os valores dos inputs
     const horario = document.getElementById("horario").value;
     const dia = document.getElementById("dia").value;
@@ -137,7 +143,7 @@ document.getElementById("buscarBtn").addEventListener("click", function() {
         const escolhido = resultados[Math.floor(Math.random() * resultados.length)];
         mostrarResultado(escolhido);
     } else {
-        alert("Nenhum resultado encontrado.");
+        noResultsMessage.classList.remove("hidden");
     }
 });
 
