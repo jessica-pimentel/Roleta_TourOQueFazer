@@ -215,7 +215,9 @@ button:hover {
 #feriadoRestaurante,
 #dataComemorativaRestaurante,
 #takeAwayRestaurante,
-#petFriendlyRestaurante {
+#petFriendlyRestaurante,
+#vegetarianRestaurante,
+#veganRestaurante {
     font-size: 18px; /* Manteve o mesmo font-size, pois era a única diferença */
     font-weight: 600;
     margin-top: 6px;
@@ -229,7 +231,9 @@ button:hover {
 #feriadoRestaurante.spinning,
 #dataComemorativaRestaurante.spinning,
 #takeAwayRestaurante.spinning,
-#petFriendlyRestaurante.spinning {
+#petFriendlyRestaurante.spinning, 
+#vegetarianRestaurante.spinning,
+#veganRestaurante.spinning {
     filter: blur(2px);
     transition: filter 0.3s ease-out;
 }
@@ -237,7 +241,7 @@ button:hover {
 /* Estilo para checkboxes (flags) */
 .flags-check {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
     margin-top: 10px;
 }
@@ -248,7 +252,7 @@ button:hover {
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
     margin-bottom: 20px;
 }
 

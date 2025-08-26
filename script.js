@@ -8,6 +8,8 @@ function mostrarResultado(restaurante) {
     const dataComemorativaRestaurante = document.getElementById("dataComemorativaRestaurante");
     const takeAwayRestaurante = document.getElementById("takeAwayRestaurante");
     const petFriendlyRestaurante = document.getElementById("petFriendlyRestaurante");
+    const vegetarianRestaurante = document.getElementById("vegetarianRestaurante");
+    const veganRestaurante = document.getElementById("veganRestaurante");
     
     // Botão de rodar novamente só aparece quando a roleta já retornou um resultado
     const rodarNovamenteBtn = document.getElementById("rodarNovamenteBtn");
@@ -21,6 +23,8 @@ function mostrarResultado(restaurante) {
     dataComemorativaRestaurante.classList.add("spinning");
     takeAwayRestaurante.classList.add("spinning");
     petFriendlyRestaurante.classList.add("spinning");
+    vegetarianRestaurante.classList.add("spinning");
+    veganRestaurante.classList.add("spinning");
 
     // Array com os dados para a roleta
     const nomes = banco.map(r => r.nome);
@@ -30,6 +34,8 @@ function mostrarResultado(restaurante) {
     const datasComemorativas = ["🎉 Aceita em data comemorativa", "❌ Não aceita em data comemorativa"];
     const takeAwayStatus = ["✅ Take away", "❌ Não tem Take away"];
     const petFriendlyStatus = ["✅ Pet friendly", "❌ Não é Pet friendly"];
+    const vegetarianStatus = ["✅ Tem opção vegetariana", "❌ Sem opção vegetariana"];
+    const veganStatus = ["✅ Tem opção vegana", "❌ Sem opção vegana"];
     
     // Configurações da animação
     const tempoTotalRoleta = 2500;
@@ -45,6 +51,8 @@ function mostrarResultado(restaurante) {
         const dataComemorativaAleatoria = datasComemorativas[Math.floor(Math.random() * datasComemorativas.length)];
         const takeAwayAleatorio = takeAwayStatus[Math.floor(Math.random() * takeAwayStatus.length)];
         const petFriendlyAleatorio = petFriendlyStatus[Math.floor(Math.random() * petFriendlyStatus.length)];
+        const vegetarianAleatorio = vegetarianStatus[Math.floor(Math.random() * vegetarianStatus.length)];
+        const veganAleatorio = veganStatus[Math.floor(Math.random() * veganStatus.length)];
 
 
         // Atualiza o texto dos elementos
@@ -54,7 +62,9 @@ function mostrarResultado(restaurante) {
         feriadoRestaurante.innerText = feriadoAleatorio;
         dataComemorativaRestaurante.innerText = dataComemorativaAleatoria;
         takeAwayRestaurante.innerText = takeAwayAleatorio;
-        petFriendlyRestaurante.innerText = petFriendlyAleatoria;
+        petFriendlyRestaurante.innerText = petFriendlyAleatorio;
+        vegetarianRestaurante.innerText = vegetarianAleatorio;
+        veganRestaurante.innerText = veganAleatorio;
 
     }, intervaloRoleta);
 
@@ -71,6 +81,8 @@ function mostrarResultado(restaurante) {
         dataComemorativaRestaurante.innerText = restaurante.dataComemorativa ? "🎉 Aceita em data comemorativa" : "❌ Não aceita em data comemorativa";
         takeAwayRestaurante.innerText = restaurante.takeaway ? "✅ Take away" : "❌ Não tem Take away";
         petFriendlyRestaurante.innerText = restaurante.petFriendly ? "✅ Pet friendly" : "❌ Não é Pet friendly";
+        vegetarianRestaurante.innerText = restaurante.vegetarian ? "✅ Tem opção vegetariana" : "❌ Sem opção vegetariana";
+        veganRestaurante.innerText = restaurante.vegan ? "✅ Tem opção vegana" : "❌ Sem opção vegana";
 
         // Remove a classe 'spinning' para tirar o blur
         nomeRestaurante.classList.remove("spinning");
@@ -80,6 +92,8 @@ function mostrarResultado(restaurante) {
         dataComemorativaRestaurante.classList.remove("spinning");
         takeAwayRestaurante.classList.remove("spinning");
         petFriendlyRestaurante.classList.remove("spinning");
+        vegetarianRestaurante.classList.remove("spinning");
+        veganRestaurante.classList.remove("spinning");
 
         // Exibe o botão de rodar novamente
         rodarNovamenteBtn.classList.remove("hidden");
@@ -138,6 +152,9 @@ document.getElementById("buscarBtn").addEventListener("click", function() {
     const categoria = document.getElementById("categoria").value;
     const takeAwayCheck = document.getElementById("takeAway").checked;
     const petFriendlyCheck = document.getElementById("petFriendly").checked;
+    const vegetarianCheck = document.getElementById("vegetarian").checked;
+    const veganCheck = document.getElementById("vegan").checked;
+
 
     // Lógica de filtragem ajustada para arrays
     const resultados = banco.filter(item => {
@@ -147,8 +164,10 @@ document.getElementById("buscarBtn").addEventListener("click", function() {
         const filtroCategoria = categoria && categoria !== "QualquerCategoria" ? (item.tipo && item.tipo.includes(categoria)) : true;
         const filtroTakeAway = !takeAwayCheck || item.takeaway;
         const filtroPetFriendly = !petFriendlyCheck || item.petFriendly;
+        const filtroVegetarian = !vegetarianCheck || item.vegetarian;
+        const filtroVegan = !veganCheck || item.vegan;
 
-        return filtroHorario && filtroDia && filtroBairro && filtroCategoria && filtroTakeAway && filtroPetFriendly;
+        return filtroHorario && filtroDia && filtroBairro && filtroCategoria && filtroTakeAway && filtroPetFriendly && filtroVegetarian && filtroVegan;
     });
 
     if (resultados.length > 0) {
@@ -227,4 +246,6 @@ function resetarFiltros() {
     document.getElementById("categoria").value = "QualquerCategoria";
     document.getElementById("takeAway").checked = false;
     document.getElementById("petFriendly").checked = false;
+    document.getElementById("vegetarian").checked = false;
+    document.getElementById("vegan").checked = false;
 }

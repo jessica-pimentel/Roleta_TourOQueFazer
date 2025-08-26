@@ -14,8 +14,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: true 
+        vegetarian: true,
+        vegan: true 
     },
     {
         nome: "Babilônia",
@@ -32,8 +32,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false 
+        vegetarian: true,
+        vegan: false 
     },
     {
         nome: "Carlo Ristorante",
@@ -50,8 +50,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false 
+        vegetarian: true,
+        vegan: false 
     },
     {
         nome: "Chateau de Gazon",
@@ -68,8 +68,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false 
+        vegetarian: false,
+        vegan: false 
     },
     {
         nome: "Chez Margot",
@@ -86,8 +86,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: true,
-        vegetariano: false,
-        vegano: false 
+        vegetarian: false,
+        vegan: false 
     },
     {
         nome: "Coco Bambu",
@@ -104,8 +104,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Coin por Ivan Lopes",
@@ -122,8 +122,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Icaro Greek Food",
@@ -140,8 +140,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Icaro Greek Food",
@@ -158,8 +158,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Icaro Greek Food",
@@ -176,8 +176,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Icaro Greek Food",
@@ -194,8 +194,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Katezzi Gastronomia",
@@ -212,8 +212,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Katezzi Gastronomia",
@@ -230,8 +230,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Katezzi Gastronomia",
@@ -248,8 +248,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "L'Epicerie",
@@ -266,8 +266,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "L'Epicerie",
@@ -284,8 +284,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Mercure Curitiba Batel - Allure",
@@ -302,8 +302,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Nuu Nikkei",
@@ -320,8 +320,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Nuu Nikkei",
@@ -338,8 +338,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Officina Restô Bar",
@@ -356,8 +356,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Paco Cocina y Bar",
@@ -374,8 +374,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Paco Cocina y Bar",
@@ -392,8 +392,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Paco Cocina y Bar",
@@ -410,8 +410,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Paco Cocina y Bar",
@@ -428,8 +428,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Roister",
@@ -446,8 +446,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Roister",
@@ -464,8 +464,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Roister",
@@ -482,8 +482,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Roister",
@@ -500,8 +500,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Terrazza 40",
@@ -518,8 +518,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     // { 
     //     nome: "Cacau Noir", 
@@ -547,8 +547,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false 
+        vegetarian: false,
+        vegan: false 
     },
     { 
         nome: "Carnivore", 
@@ -565,8 +565,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false  
+        vegetarian: false,
+        vegan: false  
     },
     { 
         nome: "Cheirin Bão", 
@@ -583,8 +583,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: false,
-        vegano: false 
+        vegetarian: false,
+        vegan: false 
     },
     { 
         nome: "Cheirin Bão", 
@@ -601,8 +601,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: false,
-        vegano: false  
+        vegetarian: false,
+        vegan: false  
     },
     { 
         nome: "Cheirin Bão", 
@@ -619,8 +619,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: false,
-        vegano: false  
+        vegetarian: false,
+        vegan: false  
     },
     { 
         nome: "Didge Steakburguer",
@@ -637,8 +637,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true ,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     { 
         nome: "Fames Pizzaria Mix", 
@@ -655,8 +655,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: false,
-        vegano: false 
+        vegetarian: false,
+        vegan: false 
     },
     { 
         nome: "Guacamole Taqueria Boulevard", 
@@ -673,8 +673,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: true 
+        vegetarian: true,
+        vegan: true 
     },
     { 
         nome: "Jardin de la Bière", 
@@ -691,8 +691,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: false,
-        vegano: false 
+        vegetarian: false,
+        vegan: false 
     },
     { 
         nome: "Kenzo", 
@@ -709,8 +709,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     { 
         nome: "Milk Creamery", 
@@ -727,8 +727,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false 
+        vegetarian: true,
+        vegan: false 
     },
     { 
         nome: "Milk Creamery", 
@@ -745,8 +745,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false  
+        vegetarian: true,
+        vegan: false  
     },
     { 
         nome: "Poke to Wok Boulevard",
@@ -763,8 +763,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: false,
-        vegano: false 
+        vegetarian: false,
+        vegan: false 
     },
     { 
         nome: "Recanto Mineiro", 
@@ -781,8 +781,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false 
+        vegetarian: true,
+        vegan: false 
     },
     {
         nome: "Emy by Kazuo",
@@ -799,8 +799,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Emy by Kazuo",
@@ -817,8 +817,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Emy by Kazuo",
@@ -835,8 +835,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Fun'iki Sushi + Rooftop",
@@ -853,8 +853,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Gyozabar",
@@ -871,8 +871,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Gyozabar",
@@ -889,8 +889,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Kandoo",
@@ -907,8 +907,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Kandoo",
@@ -925,8 +925,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Ken Taki Cozinha Oriental",
@@ -943,8 +943,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Ken Taki Cozinha Oriental",
@@ -961,8 +961,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Mazu Japanese Cuisine",
@@ -979,8 +979,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Neko Asian Bar",
@@ -997,8 +997,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Oishi Ramen Bar",
@@ -1015,8 +1015,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Poke to Wok",
@@ -1033,8 +1033,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Sushi no Rolo",
@@ -1051,8 +1051,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Swadisht Indian Cuisine",
@@ -1069,8 +1069,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Taj Bar",
@@ -1087,8 +1087,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Thai Restaurante",
@@ -1105,8 +1105,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Tuk-Tuk",
@@ -1123,8 +1123,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "WikiMaki",
@@ -1141,8 +1141,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Barbarium Pub",
@@ -1159,8 +1159,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Boi Tatá",
@@ -1177,8 +1177,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Boi Tatá",
@@ -1195,8 +1195,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Boi Tatá",
@@ -1213,8 +1213,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     }, //até aqui
     {
         nome: "Garden HamBargueria",
@@ -1231,8 +1231,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Garden HamBargueria",
@@ -1249,8 +1249,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Garden HamBargueria",
@@ -1267,8 +1267,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "GOD SAVE THE BEER.",
@@ -1285,8 +1285,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "GOD SAVE THE WINE.",
@@ -1303,8 +1303,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Ponto Vin",
@@ -1321,8 +1321,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Ruína Bar",
@@ -1339,8 +1339,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Ruína Bar",
@@ -1357,8 +1357,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Ruína Bar",
@@ -1375,8 +1375,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Ruína Bar",
@@ -1393,8 +1393,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Ruína Bar",
@@ -1411,8 +1411,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Ruína Bar",
@@ -1429,8 +1429,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Sambiquira Bar",
@@ -1447,8 +1447,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "Sirène Fish & Chips",
@@ -1465,8 +1465,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "UpStairs Wine Bar",
@@ -1483,8 +1483,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     }, 
     {
         nome: "Bite Me",
@@ -1501,8 +1501,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Boardz Game Pub ",
@@ -1519,8 +1519,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Boardz Game Pub ",
@@ -1537,8 +1537,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Fábrica Gourmet Hamburgueria",
@@ -1555,8 +1555,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Fábrica Gourmet Hamburgueria",
@@ -1573,8 +1573,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: true
+        vegetarian: true,
+        vegan: true
     },
     {
         nome: "Gracco Burger - Curitiba",
@@ -1591,8 +1591,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Hard Rock Cafe Curitiba",
@@ -1609,8 +1609,8 @@ const banco = [
         petFriendly: true,
         feriado: false,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Janela Bar",
@@ -1627,8 +1627,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "O Hamburgueiro",
@@ -1645,8 +1645,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Sina Hamburgueria",
@@ -1663,8 +1663,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Sina Hamburgueria",
@@ -1681,8 +1681,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "Sina Hamburgueria",
@@ -1699,8 +1699,8 @@ const banco = [
         petFriendly: false,
         feriado: true,
         dataComemorativa: true,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "The Fat Smash",
@@ -1717,8 +1717,8 @@ const banco = [
         petFriendly: false,
         feriado: false,
         dataComemorativa: false,
-        vegetariano: false,
-        vegano: false
+        vegetarian: false,
+        vegan: false
     },
     {
         nome: "T.T Burger",
@@ -1735,8 +1735,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     {
         nome: "T.T Burger",
@@ -1753,8 +1753,8 @@ const banco = [
         petFriendly: true,
         feriado: true,
         dataComemorativa: false,
-        vegetariano: true,
-        vegano: false
+        vegetarian: true,
+        vegan: false
     },
     // até aqui
     {
@@ -3059,7 +3059,7 @@ const banco = [
     tipo: "Sabores do Mundo",
     site: "https://baraquias.com/",
     beneficio: "ganhe outro igual ou de menor valor",
-    descricao: "um Arais de carne ou vegetariano",
+    descricao: "um Arais de carne ou vegetarian",
     bairro: [],
     dia: [],
     horario: [],
