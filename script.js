@@ -113,6 +113,16 @@ bairrosUnicos.forEach(b => {
     bairroSelect.appendChild(option);
 });
 
+const categoriaSelect = document.getElementById("categoria");
+const categoriasUnicas = [...new Set(banco.flatMap(r => r.tipo || []))].sort();
+
+categoriasUnicas.forEach(c => {
+    const option = document.createElement("option");
+    option.value = c;
+    option.textContent = c;
+    categoriaSelect.appendChild(option);
+});
+
 // --- Evento do botão Buscar ---
 document.getElementById("buscarBtn").addEventListener("click", function() {
     // Referência para o elemento quando não tiver resultados para o filtro
@@ -125,6 +135,7 @@ document.getElementById("buscarBtn").addEventListener("click", function() {
     const horario = document.getElementById("horario").value;
     const dia = document.getElementById("dia").value;
     const bairro = document.getElementById("bairro").value;
+    const categoria = document.getElementById("categoria").value;
     const takeAwayCheck = document.getElementById("takeAway").checked;
     const petFriendlyCheck = document.getElementById("petFriendly").checked;
 
@@ -133,10 +144,11 @@ document.getElementById("buscarBtn").addEventListener("click", function() {
         const filtroHorario = horario && horario !== "fullDay" ? item.horario.includes(horario) : true;
         const filtroDia = dia && dia !== "randomDay" ? item.dia.includes(dia) : true;
         const filtroBairro = bairro && bairro !== "QualquerBairro" ? item.bairro.includes(bairro) : true;
+        const filtroCategoria = categoria && categoria !== "QualquerCategoria" ? (item.tipo && item.tipo.includes(categoria)) : true;
         const filtroTakeAway = !takeAwayCheck || item.takeaway;
         const filtroPetFriendly = !petFriendlyCheck || item.petFriendly;
 
-        return filtroHorario && filtroDia && filtroBairro && filtroTakeAway && filtroPetFriendly;
+        return filtroHorario && filtroDia && filtroBairro && filtroCategoria && filtroTakeAway && filtroPetFriendly;
     });
 
     if (resultados.length > 0) {
@@ -212,6 +224,7 @@ function resetarFiltros() {
     document.getElementById("horario").value = "fullDay";
     document.getElementById("dia").value = "randomDay";
     document.getElementById("bairro").value = "QualquerBairro";
+    document.getElementById("categoria").value = "QualquerCategoria";
     document.getElementById("takeAway").checked = false;
     document.getElementById("petFriendly").checked = false;
 }
