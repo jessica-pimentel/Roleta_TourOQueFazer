@@ -141,7 +141,7 @@ const banco = [
         feriado: true,
         dataComemorativa: true,
         vegetarian: true,
-        vegan: true
+        vegan: false
     },
     {
         nome: "Icaro Greek Food",
