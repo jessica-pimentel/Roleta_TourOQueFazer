@@ -307,8 +307,9 @@ button:hover {
 /* Estilo para checkboxes (flags) */
 .flags-check {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 5px;
-    justify-content: center;
     margin-top: 10px;
 }
 
@@ -328,4 +329,20 @@ button:hover {
     width: 18px;
     height: 14px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    .flags-check {
+        justify-content: flex-start; 
+        gap: 5px; 
+    }
+
+    .flags-check label {
+        font-size: 13px; 
+    }
+
+    .flags-check input[type="checkbox"] {
+        transform: scale(0.8); 
+        margin-right: 2px; 
+    }
 }
