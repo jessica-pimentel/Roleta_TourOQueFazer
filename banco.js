@@ -105,7 +105,7 @@ const banco = [
         feriado: true,
         dataComemorativa: true,
         vegetarian: true,
-        vegan: true
+        vegan: false
     },
     {
         nome: "Coin por Ivan Lopes",
@@ -4245,7 +4245,7 @@ const banco = [
         feriado: false,
         dataComemorativa: false,
         vegetarian: true,
-        vegan: true
+        vegan: false
     },
     {
         nome: "Fazenda Churrascada Curitiba",
