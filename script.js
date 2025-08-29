@@ -10,12 +10,15 @@ function mostrarResultado(restaurante) {
     const petFriendlyRestaurante = document.getElementById("petFriendlyRestaurante");
     const vegetarianRestaurante = document.getElementById("vegetarianRestaurante");
     const veganRestaurante = document.getElementById("veganRestaurante");
+    const imagemRestaurante = document.getElementById("imagemRestaurante");
+    const beneficioDescricaoRestaurante = document.getElementById("beneficioDescricaoRestaurante");
     
     // Botão de rodar novamente só aparece quando a roleta já retornou um resultado
     const rodarNovamenteBtn = document.getElementById("rodarNovamenteBtn");
     rodarNovamenteBtn.classList.add("hidden");
 
     // Adiciona a classe 'spinning' para aplicar o blur em todos os elementos
+    beneficioDescricaoRestaurante.classList.add("spinning");
     nomeRestaurante.classList.add("spinning");
     horaRestaurante.classList.add("spinning");
     bairroRestaurante.classList.add("spinning");
@@ -27,15 +30,18 @@ function mostrarResultado(restaurante) {
     veganRestaurante.classList.add("spinning");
 
     // Array com os dados para a roleta
+    const imagens = banco.map(r => r.image || "");
+    const descricoes = banco.map(r => r.descricao || "sem descrição");
+    const beneficios = banco.map(r => r.beneficio || "sem benefício");
     const nomes = banco.map(r => r.nome);
     const horas = banco.map(r => r.hora);
     const bairros = banco.map(r => r.bairro);
-    const feriados = ["✅ Aceita em feriado", "❌ Não aceita em feriado"];
-    const datasComemorativas = ["🎉 Aceita em data comemorativa", "❌ Não aceita em data comemorativa"];
-    const takeAwayStatus = ["✅ Take away", "❌ Não tem Take away"];
-    const petFriendlyStatus = ["✅ Pet friendly", "❌ Não é Pet friendly"];
-    const vegetarianStatus = ["✅ Tem opção vegetariana", "❌ Sem opção vegetariana"];
-    const veganStatus = ["✅ Tem opção vegana", "❌ Sem opção vegana"];
+    const feriados = ["✅ Feriado", "❌ Feriado"];
+    const datasComemorativas = ["✅ Data comemorativa", "❌ Data comemorativa"];
+    const takeAwayStatus = ["✅ Take away", "❌ Take away"];
+    const petFriendlyStatus = ["✅ Pet friendly", "❌ Pet friendly"];
+    const vegetarianStatus = ["✅ Vegetariana", "❌ Vegetariana"];
+    const veganStatus = ["✅ Vegana", "❌ Vegana"];
     
     // Configurações da animação
     const tempoTotalRoleta = 2500;
@@ -53,10 +59,14 @@ function mostrarResultado(restaurante) {
         const petFriendlyAleatorio = petFriendlyStatus[Math.floor(Math.random() * petFriendlyStatus.length)];
         const vegetarianAleatorio = vegetarianStatus[Math.floor(Math.random() * vegetarianStatus.length)];
         const veganAleatorio = veganStatus[Math.floor(Math.random() * veganStatus.length)];
+        const imagemAleatoria = imagens[Math.floor(Math.random() * imagens.length)];
+        const descricaoAleatorio = descricoes[Math.floor(Math.random() * descricoes.length)];
+        const beneficioAleatorio = beneficios[Math.floor(Math.random() * beneficios.length)];
 
 
         // Atualiza o texto dos elementos
         nomeRestaurante.innerText = nomeAleatorio;
+        beneficioDescricaoRestaurante.innerText = `Na compra de ${descricaoAleatorio} ${beneficioAleatorio}`;
         horaRestaurante.innerText = `Horário: ${horaAleatoria}`;
         bairroRestaurante.innerText = `Bairro: ${bairroAleatorio.join(", ")}`;
         feriadoRestaurante.innerText = feriadoAleatorio;
@@ -65,6 +75,12 @@ function mostrarResultado(restaurante) {
         petFriendlyRestaurante.innerText = petFriendlyAleatorio;
         vegetarianRestaurante.innerText = vegetarianAleatorio;
         veganRestaurante.innerText = veganAleatorio;
+        if (imagemAleatoria) {
+            imagemRestaurante.src = imagemAleatoria;
+            imagemRestaurante.style.display = "block";
+        } else {
+            imagemRestaurante.style.display = "none";
+        }
 
     }, intervaloRoleta);
 
@@ -75,17 +91,26 @@ function mostrarResultado(restaurante) {
 
         // Mostra o resultado final
         nomeRestaurante.innerText = restaurante.nome;
+        beneficioDescricaoRestaurante.innerText = `Na compra de ${restaurante.descricao} ${restaurante.beneficio}`;
         horaRestaurante.innerText = `Horário: ${restaurante.hora}`;
         bairroRestaurante.innerText = `Bairro: ${restaurante.bairro.join(", ")}`;
-        feriadoRestaurante.innerText = restaurante.feriado ? "✅ Aceita em feriado" : "❌ Não aceita em feriado";
-        dataComemorativaRestaurante.innerText = restaurante.dataComemorativa ? "🎉 Aceita em data comemorativa" : "❌ Não aceita em data comemorativa";
-        takeAwayRestaurante.innerText = restaurante.takeaway ? "✅ Take away" : "❌ Não tem Take away";
-        petFriendlyRestaurante.innerText = restaurante.petFriendly ? "✅ Pet friendly" : "❌ Não é Pet friendly";
-        vegetarianRestaurante.innerText = restaurante.vegetarian ? "✅ Tem opção vegetariana" : "❌ Sem opção vegetariana";
-        veganRestaurante.innerText = restaurante.vegan ? "✅ Tem opção vegana" : "❌ Sem opção vegana";
+        feriadoRestaurante.innerText = restaurante.feriado ? "✅ Feriado" : "❌ Feriado";
+        dataComemorativaRestaurante.innerText = restaurante.dataComemorativa ? "✅ Data comemorativa" : "❌ Data comemorativa";
+        takeAwayRestaurante.innerText = restaurante.takeaway ? "✅ Take away" : "❌ Take away";
+        petFriendlyRestaurante.innerText = restaurante.petFriendly ? "✅ Pet friendly" : "❌ Pet friendly";
+        vegetarianRestaurante.innerText = restaurante.vegetarian ? "✅ Vegetariana" : "❌ Vegetariana";
+        veganRestaurante.innerText = restaurante.vegan ? "✅ Vegana" : "❌ Vegana";
+
+        if (restaurante.image) {
+            imagemRestaurante.src = restaurante.image;
+            imagemRestaurante.classList.remove("hidden-image");
+        } else {
+            imagemRestaurante.classList.add("hidden-image");
+        }
 
         // Remove a classe 'spinning' para tirar o blur
         nomeRestaurante.classList.remove("spinning");
+        beneficioDescricaoRestaurante.classList.remove("spinning");
         horaRestaurante.classList.remove("spinning");
         bairroRestaurante.classList.remove("spinning");
         feriadoRestaurante.classList.remove("spinning");
@@ -155,7 +180,6 @@ document.getElementById("buscarBtn").addEventListener("click", function() {
     const vegetarianCheck = document.getElementById("vegetarian").checked;
     const veganCheck = document.getElementById("vegan").checked;
 
-
     // Lógica de filtragem ajustada para arrays
     const resultados = banco.filter(item => {
         const filtroHorario = horario && horario !== "fullDay" ? item.horario.includes(horario) : true;
@@ -210,11 +234,9 @@ function mostrarRestaurante(restaurante) {
       document.getElementById("nomeRestaurante").textContent = restaurante.nome;
       document.getElementById("horaRestaurante").textContent = "⏰ " + restaurante.horario;
       document.getElementById("bairroRestaurante").textContent = "📍 " + restaurante.bairro;
-
-      document.getElementById("feriadoRestaurante").textContent =
-        restaurante.feriado ? "✅ Aceita Feriado" : "❌ Não aceita em feriado";
-      document.getElementById("dataComemorativaRestaurante").textContent =
-        restaurante.dataComemorativa ? "✅ Aceita em data comemorativa" : "❌ Não aceita em data comemorativa";
+      document.getElementById("feriadoRestaurante").textContent = restaurante.feriado ? "✅ Feriado" : "❌ Feriado";
+      document.getElementById("dataComemorativaRestaurante").textContent =restaurante.dataComemorativa ? "✅ Data comemorativa" : "❌ Data comemorativa";
+      
 
       // tira o blur
       dados.classList.remove("loading");

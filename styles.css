@@ -5,6 +5,18 @@
     box-sizing: border-box;
 }
 
+.hidden-image {
+    display: none;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
@@ -84,7 +96,7 @@ body {
 }
 
 #rodarNovamenteBtn {
-    margin-top:15px;
+    margin-top:20px;
 }
 
 /* Título dentro do card */
@@ -225,14 +237,22 @@ button:hover {
 #nomeRestaurante {
     font-size: 35px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     color: #023e8a;
+}
+
+#beneficioDescricaoRestaurante {
+    font-size: 19px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    color: #0077b6;
 }
 
 #horaRestaurante, 
 #bairroRestaurante {
-    font-size: 18px;
-    margin-top: 6px;
+    font-size: 16px;
+    margin-top: -5px;
+    margin-bottom: 10px;
     color: #0077b6;
 }
 
@@ -242,10 +262,31 @@ button:hover {
 #petFriendlyRestaurante,
 #vegetarianRestaurante,
 #veganRestaurante {
-    font-size: 18px; /* Manteve o mesmo font-size, pois era a única diferença */
+    font-size: 16px; 
     font-weight: 600;
-    margin-top: 6px;
+    margin-top: -4px;
     color: #0077b6;
+}
+
+.info-columns {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: flex-start;
+    gap: 10px 4%;
+    margin-top: 10px;
+}
+
+/* Aplique os estilos de texto aos parágrafos dentro do contêiner */
+.info-columns p {
+    flex-basis: 48%; 
+    font-size: 16px; 
+    font-weight: 700;
+    margin-top: 40px; 
+    color: #0077b6;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 /* Animação do blur da roleta */
@@ -257,7 +298,8 @@ button:hover {
 #takeAwayRestaurante.spinning,
 #petFriendlyRestaurante.spinning, 
 #vegetarianRestaurante.spinning,
-#veganRestaurante.spinning {
+#veganRestaurante.spinning,
+#beneficioDescricaoRestaurante.spinning {
     filter: blur(2px);
     transition: filter 0.3s ease-out;
 }
@@ -271,7 +313,7 @@ button:hover {
 }
 
 .flags-check label {
-    font-size: 14px;
+    font-size: 15px;
     color: #023e8a;
     cursor: pointer;
     display: flex;
