@@ -346,3 +346,32 @@ button:hover {
         margin-right: 2px;
     }
 }
+
+/* Estilos para a seção de dias da semana */
+.dias-semana {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Espaço entre as bolinhas */
+    margin: 15px 0; /* Margem superior e inferior */
+}
+
+.dia-circulo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Torna o elemento uma bolinha */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.dia-ativo {
+    background-color: #0077b6; /* Cor para dias de funcionamento */
+}
+
+.dia-inativo {
+    background-color: #ccc; /* Cor para dias de não funcionamento */
+    opacity: 0.6; /* Deixa a bolinha "desabilitada" */
+}
