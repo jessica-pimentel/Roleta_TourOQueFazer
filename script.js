@@ -220,6 +220,7 @@ document.getElementById("buscarBtn").addEventListener("click", function() {
     const petFriendlyCheck = document.getElementById("petFriendly").checked;
     const vegetarianCheck = document.getElementById("vegetarian").checked;
     const veganCheck = document.getElementById("vegan").checked;
+    const feriadoCheck = document.getElementById("feriado").checked;
 
     // Lógica de filtragem ajustada para arrays
     const resultados = banco.filter(item => {
@@ -231,8 +232,9 @@ document.getElementById("buscarBtn").addEventListener("click", function() {
         const filtroPetFriendly = !petFriendlyCheck || item.petFriendly;
         const filtroVegetarian = !vegetarianCheck || item.vegetarian;
         const filtroVegan = !veganCheck || item.vegan;
+        const filtroFeriado = !feriadoCheck || item.feriado;
 
-        return filtroHorario && filtroDia && filtroBairro && filtroCategoria && filtroTakeAway && filtroPetFriendly && filtroVegetarian && filtroVegan;
+        return filtroHorario && filtroDia && filtroBairro && filtroCategoria && filtroTakeAway && filtroPetFriendly && filtroVegetarian && filtroVegan && filtroFeriado;
     });
 
     if (resultados.length > 0) {

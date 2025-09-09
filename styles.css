@@ -308,18 +308,26 @@ button:hover {
     display: flex;
     flex-wrap: wrap; 
     justify-content: center;
-    gap: 5px; 
+    gap: 10px 10px;
+}
+
+.flags-check-segunda-linha {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 10px 10px;
 }
 
 .flags-check label {
     display: flex; 
     align-items: center; 
-    gap: 1px; 
+    gap: 4px; 
     font-size: 15px;
     color: #023e8a;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     white-space: nowrap;
+    
 }
 
 .flags-check input[type="checkbox"] {
@@ -339,7 +347,7 @@ button:hover {
 
     .flags-check label {
         font-size: 13px; 
-    }
+    }    
 
     .flags-check input[type="checkbox"] {
         transform: scale(0.8);
@@ -374,4 +382,8 @@ button:hover {
 .dia-inativo {
     background-color: #ccc; /* Cor para dias de não funcionamento */
     opacity: 0.6; /* Deixa a bolinha "desabilitada" */
+}
+
+.button-container {
+    margin-top: 5px;
 }
