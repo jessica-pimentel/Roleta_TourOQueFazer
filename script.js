@@ -12,7 +12,8 @@ function mostrarResultado(restaurante) {
     const veganRestaurante = document.getElementById("veganRestaurante");
     const imagemRestaurante = document.getElementById("imagemRestaurante");
     const beneficioDescricaoRestaurante = document.getElementById("beneficioDescricaoRestaurante");
-    
+    const diasSemanaContainer = document.getElementById("dias-semana-restaurante");
+
     // Botão de rodar novamente só aparece quando a roleta já retornou um resultado
     const rodarNovamenteBtn = document.getElementById("rodarNovamenteBtn");
     rodarNovamenteBtn.classList.add("hidden");
@@ -28,6 +29,37 @@ function mostrarResultado(restaurante) {
     petFriendlyRestaurante.classList.add("spinning");
     vegetarianRestaurante.classList.add("spinning");
     veganRestaurante.classList.add("spinning");
+    diasSemanaContainer.classList.add("spinning");
+
+    // Função auxiliar para exibir as bolinhas dos dias da semana
+    function mostrarDiasSemana(dias) {
+        if (!diasSemanaContainer) return;
+        diasSemanaContainer.innerHTML = '';
+        const diasDaSemanaCompletos = {
+            "sunday": "D",
+            "monday": "S",
+            "tuesday": "T",
+            "wednesday": "Q",
+            "thursday": "Q",
+            "friday": "S",
+            "saturday": "S"
+        };
+
+        const ordemDosDias = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+
+        ordemDosDias.forEach(diaKey => {
+            const diaElement = document.createElement("div");
+            diaElement.classList.add("dia-circulo");
+            diaElement.innerText = diasDaSemanaCompletos[diaKey];
+
+            if (dias && dias.includes(diaKey)) {
+                diaElement.classList.add("dia-ativo");
+            } else {
+                diaElement.classList.add("dia-inativo");
+            }
+            diasSemanaContainer.appendChild(diaElement);
+        });
+    }
 
     // Array com os dados para a roleta
     const imagens = banco.map(r => r.image || "");
@@ -36,6 +68,7 @@ function mostrarResultado(restaurante) {
     const nomes = banco.map(r => r.nome);
     const horas = banco.map(r => r.hora);
     const bairros = banco.map(r => r.bairro);
+    const dias = banco.map(r => r.dia);
     const feriados = ["✅ Feriado", "❌ Feriado"];
     const datasComemorativas = ["✅ Data comemorativa", "❌ Data comemorativa"];
     const takeAwayStatus = ["✅ Take away", "❌ Take away"];
@@ -62,7 +95,7 @@ function mostrarResultado(restaurante) {
         const imagemAleatoria = imagens[Math.floor(Math.random() * imagens.length)];
         const descricaoAleatorio = descricoes[Math.floor(Math.random() * descricoes.length)];
         const beneficioAleatorio = beneficios[Math.floor(Math.random() * beneficios.length)];
-
+        const diasAleatorios = dias;
 
         // Atualiza o texto dos elementos
         nomeRestaurante.innerText = nomeAleatorio;
@@ -75,6 +108,9 @@ function mostrarResultado(restaurante) {
         petFriendlyRestaurante.innerText = petFriendlyAleatorio;
         vegetarianRestaurante.innerText = vegetarianAleatorio;
         veganRestaurante.innerText = veganAleatorio;
+        mostrarDiasSemana(diasAleatorios);
+
+        // Atualiza a imagem do restaurante
         if (imagemAleatoria) {
             imagemRestaurante.src = imagemAleatoria;
             imagemRestaurante.style.display = "block";
@@ -100,6 +136,7 @@ function mostrarResultado(restaurante) {
         petFriendlyRestaurante.innerText = restaurante.petFriendly ? "✅ Pet friendly" : "❌ Pet friendly";
         vegetarianRestaurante.innerText = restaurante.vegetarian ? "✅ Vegetariana" : "❌ Vegetariana";
         veganRestaurante.innerText = restaurante.vegan ? "✅ Vegana" : "❌ Vegana";
+        mostrarDiasSemana(restaurante.dia);
 
         if (restaurante.image) {
             imagemRestaurante.src = restaurante.image;
@@ -119,6 +156,10 @@ function mostrarResultado(restaurante) {
         petFriendlyRestaurante.classList.remove("spinning");
         vegetarianRestaurante.classList.remove("spinning");
         veganRestaurante.classList.remove("spinning");
+
+        if (diasSemanaContainer){
+            diasSemanaContainer.classList.remove("spinning");
+        }
 
         // Exibe o botão de rodar novamente
         rodarNovamenteBtn.classList.remove("hidden");
