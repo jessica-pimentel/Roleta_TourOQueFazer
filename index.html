@@ -65,6 +65,7 @@
 
         <div class="button-container">
             <button id="buscarBtn">Buscar</button>
+            <button id="todosBtn">Listar todos</button>
         </div>
     </div>
 
@@ -76,9 +77,11 @@
     <div id="modalResultado" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>🎉 Parabéns!</h2>
-            <p>O seu tour vai ser no...</p>
+            <h2 id="modalTitle">🎉 Parabéns!</h2> 
             
+            <div id="listaRestaurantesContainer" style="display: none;">
+                </div>
+
             <div id="dadosRestaurante">
                 <img id="imagemRestaurante" src="" alt="Imagem do Restaurante" class="hidden-image modal-image"/>
                 <h1 id="nomeRestaurante"></h1>
