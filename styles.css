@@ -399,6 +399,22 @@ button:hover {
     color: #fff;
 }
 
+.dia-circulo-lista {
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 5px;
+    background-color: #ccc;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
 .dia-ativo {
     background-color: #0077b6;
 }
@@ -406,6 +422,16 @@ button:hover {
 .dia-inativo {
     background-color: #ccc;
     opacity: 0.6;
+}
+
+.dia-circulo-lista.dia-ativo {
+    background-color: #0077b6;
+    color: white;
+}
+
+.dia-circulo-lista.dia-inativo {
+    background-color: #ccc;
+    color: white;
 }
 
 

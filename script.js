@@ -1,4 +1,29 @@
-// A variável 'banco' é assumida como sendo carregada do banco.js
+function agruparBanco(banco) {
+    const agrupados = {};
+
+    banco.forEach(restaurante => {
+        const nome = restaurante.nome;
+
+        if (!agrupados[nome]) {
+            agrupados[nome] = { ...restaurante };
+            agrupados[nome].hora = Array.isArray(restaurante.hora) ? [...restaurante.hora] : [restaurante.hora];
+            agrupados[nome].dia = Array.isArray(restaurante.dia[0]) ? restaurante.dia.map(d => [...d]) : [restaurante.dia];
+        } else {
+            const novasHoras = Array.isArray(restaurante.hora) ? restaurante.hora : [restaurante.hora];
+            const novosDias = Array.isArray(restaurante.dia[0]) ? restaurante.dia.map(d => [...d]) : [restaurante.dia];
+
+            novasHoras.forEach((h, i) => {
+                agrupados[nome].hora.push(h);
+                agrupados[nome].dia.push(novosDias[i] || []);
+            });
+        }
+    });
+
+    return Object.values(agrupados);
+}
+
+// Exemplo de uso antes de filtrar ou exibir:
+const bancoAgrupado = agruparBanco(banco);
 
 // --- FUNÇÕES DE FILTRAGEM E EXIBIÇÃO DE RESULTADOS ---
 
@@ -41,23 +66,29 @@ function filtrarRestaurantes(banco) {
 function mostrarDiasSemana(dias, diasSemanaContainer) {
     if (!diasSemanaContainer) return;
     diasSemanaContainer.innerHTML = '';
-    const diasDaSemanaCompletos = {
-        "sunday": "D", "monday": "S", "tuesday": "T", "wednesday": "Q", 
-        "thursday": "Q", "friday": "S", "saturday": "S"
+        const diasDaSemanaCompletos = {
+        sunday: "D",
+        monday: "S",
+        tuesday: "T",
+        wednesday: "Q",
+        thursday: "Q",
+        friday: "S",
+        saturday: "S"
     };
 
     const ordemDosDias = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 
-    ordemDosDias.forEach(diaKey => {
-        const diaElement = document.createElement("div");
+    ordemDosDias.forEach(dia => {
+        const diaElement = document.createElement("span"); 
         diaElement.classList.add("dia-circulo");
-        diaElement.innerText = diasDaSemanaCompletos[diaKey];
+        diaElement.innerText = diasDaSemanaCompletos[dia];
 
-        if (dias && dias.includes(diaKey)) {
-            diaElement.classList.add("dia-ativo");
+        if (dias && dias.includes(dia)) {
+            diaElement.classList.add("dia-ativo"); 
         } else {
-            diaElement.classList.add("dia-inativo");
+            diaElement.classList.add("dia-inativo"); 
         }
+
         diasSemanaContainer.appendChild(diaElement);
     });
 }
@@ -242,7 +273,12 @@ function exibirListaRestaurantes(restaurantes) {
                         
                         <div class="location-time-info">
                             <p class="restaurante-bairro-list">📍 ${restaurante.bairro.join(', ')}</p>
-                            <p class="restaurante-hora-list">⏰ ${restaurante.hora}</p>
+                            <div class="restaurante-horarios-list">
+                                ${restaurante.hora.map((h, i) => {
+                                    const diasDoHorario = restaurante.dia[i] ? mostrarDiasSemana(restaurante.dia[i]) : '';
+                                    return `<p>⏰ ${h}<br>      ${diasDoHorario}</p>`;
+                                }).join('')}
+                            </div>
                         </div>
                         
                         <p class="beneficio-lista">
@@ -275,6 +311,25 @@ function exibirListaRestaurantes(restaurantes) {
             ul.appendChild(li);
         });
         listaContainer.appendChild(ul);
+    }
+
+    function mostrarDiasSemana(dias) {
+        const diasDaSemanaCompletos = {
+            sunday: "D",
+            monday: "S",
+            tuesday: "T",
+            wednesday: "Q",
+            thursday: "Q",
+            friday: "S",
+            saturday: "S"
+        };
+
+        const ordemDosDias = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+
+        return ordemDosDias.map(dia => {
+            const ativo = dias && dias.includes(dia) ? "dia-ativo" : "dia-inativo";
+            return `<span class="dia-circulo-lista ${ativo}">${diasDaSemanaCompletos[dia]}</span>`;
+        }).join('');
     }
     
     // Mostra o modal
@@ -347,7 +402,8 @@ document.getElementById("todosBtn").addEventListener("click", function() {
     const noResultsMessage = document.getElementById("noResultsMessage");
     noResultsMessage.classList.add("hidden");
 
-    const resultados = filtrarRestaurantes(banco);
+    const bancoAgrupado = agruparBanco(banco); 
+    const resultados = filtrarRestaurantes(bancoAgrupado);
 
     // Exibe a lista completa no modal
     exibirListaRestaurantes(resultados);
