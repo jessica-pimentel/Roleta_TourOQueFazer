@@ -27,11 +27,6 @@ const bancoAgrupado = agruparBanco(banco);
 
 // --- FUNÇÕES DE FILTRAGEM E EXIBIÇÃO DE RESULTADOS ---
 
-/**
- * Filtra a lista de restaurantes (banco) com base nos filtros da interface.
- * @param {Array<Object>} banco O array de objetos que representa a lista completa de restaurantes.
- * @returns {Array<Object>} Um array contendo todos os restaurantes que atendem aos filtros.
- */
 function filtrarRestaurantes(banco) {
     const horario = document.getElementById("horario").value;
     const dia = document.getElementById("dia").value;
@@ -332,7 +327,6 @@ function exibirListaRestaurantes(restaurantes) {
         }).join('');
     }
     
-    // Mostra o modal
     modal.style.display = "flex";
 
     // Reajusta o evento de fechar o modal
