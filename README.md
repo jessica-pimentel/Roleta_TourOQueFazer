@@ -1,4 +1,4 @@
-# 🎰 Roleta de Restaurantes do [Tour o Que Fazer Curitiba!](https://touroquefazercuritiba.com.br/) 
+# 🎰 Roleta de Restaurantes do Tour o Que Fazer Curitiba!
 
 Aplicação feita para **sortear aleatoriamente um restaurante** para ir do Tour O Que Fazer Curitiba, de forma divertida e acessível.  
 O usuário seleciona filtros (como **horário, dia, bairro, categoria e preferências: take away, pet friendly, vegetariano, vegano**) e a **roleta escolhe um restaurante do tour para ir!**
@@ -55,3 +55,4 @@ O usuário seleciona filtros (como **horário, dia, bairro, categoria e preferê
 ## 📜 Licença
 
 Este projeto é de uso livre para **fins educativos** e não possui fins comerciais.  
+
