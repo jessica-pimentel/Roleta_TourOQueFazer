@@ -246,7 +246,7 @@ function exibirListaRestaurantes(restaurantes) {
         listaContainer.innerHTML = '<p class="no-results-list">Nenhum restaurante encontrado com os filtros aplicados.</p>';
         modalTitle.textContent = '❌ Sem Resultados';
     } else {
-        modalTitle.textContent = `Restaurantes (${restaurantes.length})`;
+        modalTitle.textContent = `Lista de Restaurantes: `;
         
         const ul = document.createElement('ul');
         ul.classList.add('lista-de-restaurantes');
