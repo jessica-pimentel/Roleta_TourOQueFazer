@@ -403,10 +403,10 @@ button:hover {
     display: inline-flex;
     align-items: center; 
     justify-content: center;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    margin-left: 5px;
+    margin-right: 2px;
     background-color: #ccc;
     color: white;
     font-weight: bold;
